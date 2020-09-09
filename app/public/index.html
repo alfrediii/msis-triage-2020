@@ -39,8 +39,38 @@
           1 of 2
         </div>
         <div class="col-6">
-          <h1>Center, wider column.</h1>
-          <p>My form will go here.</p>
+          <h1>New visit</h1>
+          <form>
+              <div class="form-group">
+                <label for="ptName">Patient Name</label>
+                <select class="form-control" id="ptName">
+                  <option>Dayton, Keith</option>
+                  <option>Prabhakar, Bipin</option>
+                  <option>Gregory, Tom</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="visitDate">Visit Date</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>12/12/1997</option>
+                  <option>12/13/1997</option>
+                  <option>12/14/1997</option>
+                </select>
+              </div>
+              <div class="form-group">
+              <label for="visitPriority">Priority</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option value="30">Critical</option>
+                <option value="20">Urgent</option>
+                <option value="10">Non-urgent</option>
+              </select>
+            </div>
+              <div class="form-group">
+                <label for="visitSymptoms">Visit Symptoms</label>
+                <textarea class="form-control" id="visitSymptoms" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
         <div class="col cardPane cardPaneLeft">
           3 of 3
