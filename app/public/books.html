@@ -10,7 +10,7 @@
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Alfred's Book Store</title>
+    <title>Alfred's Book Store | Books</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
@@ -35,15 +35,76 @@
     <div class="container">
       <div class="row">
         <div class="col cardPane cardPaneLeft">
-          <a class="nav-link" href="./members.html">Last page</a>
+          <a class="nav-link" href="./index.html">Last page</a>
         </div>
         <div class="col-6">
-          <h1>Book of the day:</h1>
-          <a href="./images/bestbook.jpg"><img src="./images/bestbook.jpg" alt="Best Book!" class="center"></a>
-          <p><cite><a href="https://www.thriftbooks.com/w/the-adventures-of-captain-underpants_dav-pilkey/258921/item/7632268/?mkwid=eiOzZoDs%7cdc&pcrid=70112861832&product=7632268&plc=&pgrid=21323637792&ptaid=pla-292266026302&utm_source=google_shopping&utm_content=eiOzZoDs%7cdc%7cpcrid%7c70112861832%7cpkw%7c%7cpmt%7c%7cproduct%7c7632268%7cslid%7c%7cpgrid%7c21323637792%7cptaid%7cpla-292266026302%7c&gclid=CjwKCAjwnef6BRAgEiwAgv8mQWufQFOWYOxWIWZXZByvbyHtR2oB8QNG583aUteLbwkscIHqQcE4mRoCrsoQAvD_BwE#isbn=0545499089&idiq=7632268">The Adventures of Captain Underpants: Color Edition</a></cite> by Dav Pilkey. Drawn in 2013.</p>
+          <h1>Here's a table of books we have in stock:</h1>
+          <table id="booklist">
+            <thead>
+  <tr>
+    <th>Title</th>
+    <th>Author(s)</th>
+    <th>Year Published</th>
+    <th>Publisher</th>
+    <th>Page Count</th>
+    <th>MSRP</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Alfred's Adventure to High School</td>
+    <td>Alfred J.</td>
+    <td>2012</td>
+    <td>Smile&Read</td>
+    <td>122</td>
+    <td>$10.60</td>
+  </tr>
+  <tr>
+    <td>Alfred's Adventure to College</td>
+    <td>Alfred J.</td>
+    <td>2016</td>
+    <td>Smile&Read</td>
+    <td>186</td>
+    <td>$15.86</td>
+  </tr>
+  <tr>
+    <td>Alfred's Adventure to Grad School</td>
+    <td>Alfred J.</td>
+    <td>2020</td>
+    <td>Smile&Read</td>
+    <td>146</td>
+    <td>$35.99</td>
+  </tr>
+  <tr>
+    <td>Alfred's Adventure to the Car Wash</td>
+    <td>Alfred J.</td>
+    <td>2021</td>
+    <td>Smile&Read</td>
+    <td>153</td>
+    <td>$15.34</td>
+    </tbody>
+  </tr>
+</table>
+  <form method="post" action="./books.html">
+  <p>Fill out this form to submit suggested titles:</p>
+  <p class="tab"><label for="Title">Title: </label>
+  <input type="text"></p>
+  <p class="tab"><label for="Author">Author: </label>
+  <input type="text"></p>
+  <p class="tab"><label for="Date">Year Published: </label>
+  <input type="text"></p>
+  <p class="tab"><label for="Pub">Publisher: </label>
+  <input type="text"></p>
+  <p class="tab"><label for="Pages">Page Count: </label>
+  <input type="text"></p>
+  <p class="tab"><label for="MSRP">MSRP: </label>
+  <input type="text"></p>
+  <input type="submit" value="Submit">
+  </form>
+
         </div>
         <div class="col cardPane cardPaneRight">
-          <a class="nav-link" href="./books.html">Next page</a>
+          <a class="nav-link" href="./userinfo.html">Next page</a>
         </div>
       </div>
     </div>
@@ -56,5 +117,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src='js/tablesort.min.js'></script>
+    <script>new Tablesort(document.getElementById('booklist'));</script>
   </body>
 </html>

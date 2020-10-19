@@ -10,7 +10,7 @@
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Alfred's Book Store</title>
+    <title>Alfred's Book Store | Members</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
@@ -35,15 +35,43 @@
     <div class="container">
       <div class="row">
         <div class="col cardPane cardPaneLeft">
-          <a class="nav-link" href="./members.html">Last page</a>
+          <a class="nav-link" href="./userinfo.html">Last page</a>
         </div>
         <div class="col-6">
-          <h1>Book of the day:</h1>
-          <a href="./images/bestbook.jpg"><img src="./images/bestbook.jpg" alt="Best Book!" class="center"></a>
-          <p><cite><a href="https://www.thriftbooks.com/w/the-adventures-of-captain-underpants_dav-pilkey/258921/item/7632268/?mkwid=eiOzZoDs%7cdc&pcrid=70112861832&product=7632268&plc=&pgrid=21323637792&ptaid=pla-292266026302&utm_source=google_shopping&utm_content=eiOzZoDs%7cdc%7cpcrid%7c70112861832%7cpkw%7c%7cpmt%7c%7cproduct%7c7632268%7cslid%7c%7cpgrid%7c21323637792%7cptaid%7cpla-292266026302%7c&gclid=CjwKCAjwnef6BRAgEiwAgv8mQWufQFOWYOxWIWZXZByvbyHtR2oB8QNG583aUteLbwkscIHqQcE4mRoCrsoQAvD_BwE#isbn=0545499089&idiq=7632268">The Adventures of Captain Underpants: Color Edition</a></cite> by Dav Pilkey. Drawn in 2013.</p>
+          <h3>View and create comments about books you've read or recommend below.</h3>
+
+            <center><table id="commentTable">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Comment</th>
+                </tr>
+              </thead>
+            <tbody id="commentTableBody">
+            <tr v-for="c in commentList" :key="c.id">
+            <td>{{ c.id }}</td>
+            <td>{{ c.username }}</td>
+            <td>{{ c.commentText }}</td>
+                </tr>
+              </tbody>
+            </table></center>
+
+
+            <form id="newCommentForm" v-on:submit.prevent="creatingComments()">
+            <p>Enter the required information below:</p>
+            <p><label>Name: </label>
+            <input v-model="newComment.username" id="username"></p>
+            <p><label>Comment: </label>
+            <br>
+            <textarea v-model="newComment.commentText" id="commentText" rows="3" cols="60" placeholder="Enter a comment here."></textarea>
+            <center><input id="submitNewComment" type="submit" class="button" value="Submit"></center>
+            </form>
         </div>
+
+
         <div class="col cardPane cardPaneRight">
-          <a class="nav-link" href="./books.html">Next page</a>
+          <a class="nav-link" href="index.html">Next page</a>
         </div>
       </div>
     </div>
@@ -56,5 +84,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/comments.app.js"></script>
   </body>
 </html>
